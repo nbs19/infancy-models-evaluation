@@ -2,6 +2,77 @@
 
 This repository contains Python scripts for evaluating and comparing saliency maps between ResNet50 models and human attention maps on ImageNet datasets.
 
+
+# Python Scripts for Data Processing
+
+This repository contains Python scripts for processing click data and generating saliency maps for ImageNet datasets.
+
+## Scripts Overview
+
+### 1. combine_npz.py
+
+Combines two `.npz` files into a single `.npz` file, merging arrays like `file_pointer`, `clickmap_x`, `clickmap_y`, and `user_id` while handling duplicates and ensuring consistency. Uses default output path if not specified.
+
+**Arguments:**
+- `--input1`: Path to the first input `.npz` file (required)
+- `--input2`: Path to the second input `.npz` file (required)
+- `--output`: Path to the output combined `.npz` file (default: `combined_click.npz` in current directory)
+- `--verbose`: Enable verbose output to print processing details
+
+**Example Usage:**
+```bash
+python3 combine_npz.py \
+    --input1 /data/data0/Bhargava/prj_clickmev2_val_imagenet_10_10_2024.npz \
+    --input2 /data/data0/Bhargava/prj_clickmev2_train_imagenet_10_10_2024.npz \
+    --verbose
+```
+
+### 2. filter_npz.py
+
+Filters a `.npz` file based on images present in an ImageNet validation directory, creating a new `.npz` file with matching data.
+
+**Arguments:**
+- `--input-npz`: Path to the input `.npz` dataset (required)
+- `--imagenet-val-dir`: Path to the ImageNet validation directory containing images (required)
+- `--output`: Path to the output filtered `.npz` file (required)
+
+**Example Usage:**
+```bash
+python3 filter_npz.py \
+    --input-npz /data/data0/Bhargava/combined_click.npz \
+    --imagenet-val-dir /data/data0/Bhargava/imagenet/val/ \
+    --output /data/data0/Bhargava/custom_filtered.npz
+```
+
+### 3. generate_saliency_maps.py
+
+Generates saliency maps from click data in a `.npz` file using ImageNet validation images, with default output paths for the generated maps.
+
+**Arguments:**
+- `--input-npz`: Path to the input `.npz` dataset (required)
+- `--imagenet-val-dir`: Path to the ImageNet validation directory containing images (required)
+- `--output-dir`: Output directory for saliency maps (default: current directory)
+- `--verbose`: Enable verbose output to print processing details
+
+**Example Usage:**
+```bash
+python3 generate_saliency_maps.py \
+    --input-npz /data/data0/Bhargava/filtered_dataset_1k.npz \
+    --imagenet-val-dir /data/data0/Bhargava/imagenet/val/ \
+    --verbose
+```
+
+## Output Files
+
+The scripts generate:
+- Combined `.npz` files with merged click data
+- Filtered `.npz` files containing only matching ImageNet images
+- Saliency map files generated from click data
+
+
+
+
+
 ## Scripts Overview
 
 ### 1. plot_two_model_img10.py
