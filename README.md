@@ -18,7 +18,7 @@ Combines two `.npz` files into a single `.npz` file, merging arrays like `file_p
 
 **Example Usage:**
 ```bash
-python3 combine_npz.py \
+python3 combine_npz.py
     --input1 /data/data0/Bhargava/prj_clickmev2_val_imagenet_10_10_2024.npz
     --input2 /data/data0/Bhargava/prj_clickmev2_train_imagenet_10_10_2024.npz
 ```
