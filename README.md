@@ -200,4 +200,4 @@ Calculates  Human inter-rater alignment (Consistency among human maps) using spl
 ```bash
 python3 calculate_shapebias_value.py --checkpoint "/data/data0/Bhargava/1k_models/shuffle_best.ckpt"
 ```
-
+Note: Helper functions are reused from official repo of [ShapeBias](https://github.com/rgeirhos/texture-vs-shape/tree/master)
