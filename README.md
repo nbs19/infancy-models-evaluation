@@ -185,6 +185,19 @@ Calculates  Human inter-rater alignment (Consistency among human maps) using spl
     --input-npz /home/bhargava/final_codes/human_align/filtered_dataset_1k.npz \
     --imagenet-val-dir /data/data0/Bhargava/imagenet/val/ \ 
     --min-users 3 \ 
-    --n-splits 100 
+    --n-splits 100
+```
+
+## Shape Bias
+
+
+#### calculate_shapebias_value.py
+
+**Arguments:**
+- `--checkpoint`: Path to Resnet Model checkpoint
+
+**Example Usage:**
+```bash
+python3 calculate_shapebias_value.py --checkpoint "/data/data0/Bhargava/1k_models/shuffle_best.ckpt"
 ```
 
