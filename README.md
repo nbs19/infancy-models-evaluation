@@ -148,3 +148,25 @@ Each script generates:
 - Heatmap visualizations comparing model saliency maps with human attention maps
 - Correlation score files containing Spearman correlation coefficients
 - Summary statistics and analysis results
+
+
+
+### 4. inter_rater.py
+
+Description: Calculates inter-rater alignment using split-half correlation on saliency maps derived from click data in a .npz file, filtering images with sufficient user inputs and processing ImageNet validation images. Runs in the background using nohup.
+Arguments:
+**Arguments:**
+--input-npz: Path to the input .npz dataset (e.g., filtered_dataset_1k.npz) (required).
+--imagenet-val-dir: Path to the ImageNet validation directory containing images (required).
+--min-users: Minimum number of users required per image (default: 5).
+--n-splits: Number of split-half iterations per image (default: 100).
+--verbose: Enable verbose output to print processing details.
+
+**Example Usage:**
+ python3 inter_rater.py \
+    --input-npz /home/bhargava/final_codes/human_align/filtered_dataset_1k.npz \
+    --imagenet-val-dir /data/data0/Bhargava/imagenet/val/ \ 
+    --min-users 3 \ 
+    --n-splits 100 
+
+
