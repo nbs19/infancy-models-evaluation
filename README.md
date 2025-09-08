@@ -1,11 +1,9 @@
 ## Saliency Map Evaluation for ResNet50 Models
 
-This repository contains Python scripts for evaluating and comparing saliency maps between ResNet50 models and human attention maps on ImageNet datasets.
+This repo contains Python scripts for evaluating saliency maps between ResNet50 model and human attention click maps on ImageNet datasets.
 
 
 ### Python Scripts for Data Processing
-
-This repository contains Python scripts for processing click data and generating saliency maps for ImageNet datasets.
 
 #### 1. combine_npz.py
 
@@ -72,7 +70,7 @@ The following scripts generate:
 
 #### 1. only_corr_value.py
 
-Computes correlation values (Spearman correlation) between saliency maps generated from a model checkpoint and human click data, processing ImageNet-10 validation images.
+Computes correlation values (Spearman correlation) between saliency maps generated from a model checkpoint and human click data.
 
 **Arguments:**
 - `--imagenet-val-dir`: Path to the ImageNet validation directory containing images (required)
